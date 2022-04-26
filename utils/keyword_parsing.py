@@ -12,7 +12,7 @@ def keywords_list():
         line = f.readline()
         # print(line)
         while line:
-            if 'def' in line:
+            if ('def' and ':') in line:
                 k1, v1 = line.split(':', 1)
                 func_i = k1[4:]
                 func_list.append(func_i)
@@ -26,13 +26,16 @@ def keywords_list():
 
 def dict_flatlist(d):
     # print(d)
-    if d is not None:
+    if (d is not None):  # and (':' in d)
         for k, v in d.items():
             if type(v) == dict:
                 dict_flatlist(v)
             elif type(v) == list:
                 for i in range(len(v)):
-                    dict_flatlist(v[i])
+                    if type(i) == dict:
+                        dict_flatlist(v[i])
+                    else:
+                        pass
             elif type(v) == int or v == None:
                 d[k] = d[k]
             else:
@@ -41,13 +44,17 @@ def dict_flatlist(d):
                 elif re.search('@(.+?)\(', str(v)).group(1) in keywords_list():
                     # re.search('((.+?)\)', str(v)).group(1)
                     case_no_find = re.split('\'', v)[1]
+                    print(case_no_find)
                     keyword = re.split('\'', v)[3]
                     if str(re.search('@(.+?)\(', str(v)).group(1)) == 'ResponseDependMulti':
                         DTO = re.split('\'', v)[5]
+                        print(DTO)
                         d[k] = keywords.ResponseDependMulti(case_no=case_no_find, keyword=keyword, DTO=DTO)
-
+                        print(d[k])
                     elif str(re.search('@(.+?)\(', str(v)).group(1)) == 'PayloadDepend':
                         d[k] = keywords.PayloadDepend(case_no=case_no_find, keyword=keyword)
+                    elif str(re.search('@(.+?)\(', str(v)).group(1)) == 'RString':
+                        d[k] = keywords.RString(flag=case_no_find, length=keyword)
 
                 else:
                     pass
@@ -59,9 +66,12 @@ def keyword_parsing_response(case_no):
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
     request = eval(str(caseinfo[12]))
     print(request)
-    for i in keywords_list():
-        dict_flatlist(d=request)
+    dict_flatlist(d=request)
     return request
+
+
+# case_no = 'A-001'
+# keyword_parsing_response(case_no=case_no)
 
 
 def keyword_parsing_api(case_no):

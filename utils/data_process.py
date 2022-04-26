@@ -44,26 +44,26 @@ def assert_result(line_no):
                 else:
                     flag.append('False')
             elif '>' in option:
-                exceptList = re.split('>', option)
+                exceptList = re.split('>=', option)
                 if exceptList[0] > exceptList[1]:
                     flag.append('True')
                 else:
                     flag.append('False')
                     return flag
             elif '>=' in option:
-                exceptList = re.split('>=', option)
+                exceptList = re.split('>', option)
                 if exceptList[0] >= exceptList[1]:
                     flag.append('True')
                 else:
                     flag.append('False')
             elif '<' in option:
-                exceptList = re.split('<', option)
+                exceptList = re.split('<=', option)
                 if exceptList[0] < exceptList[1]:
                     flag.append('True')
                 else:
                     flag.append('False')
             elif '<=' in option:
-                exceptList = re.split('<=', option)
+                exceptList = re.split('<', option)
                 if exceptList[0] <= exceptList[1]:
                     flag.append('True')
                 else:

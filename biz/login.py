@@ -65,10 +65,11 @@ def get_token():
     sleep(0.2)
     ActionChains(driver).release().perform()
     sleep(0.5)
-    driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[3]/button/span/span').click()
-    sleep(2)
+    driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[3]/button').click()
+    sleep(4)
     request_log = driver.get_log('performance')
-
+    # print(request_log)
+    token = ""
     for i in range(len(request_log)):
         message = json.loads(request_log[i]['message'])
         message = message['message']['params']
@@ -78,13 +79,12 @@ def get_token():
             continue
 
         url = request.get('url')
-        if (url == "http://139.9.123.121:83/ksb/rest/equipmentMap/getRole"):
+        if url == "http://139.9.123.121:83/ksb/rest/equipmentMap/getRole":
             # 得到requestId
-            token = message['request']['headers']['Authorization']
-            # print(token)
+            token += message['request']['headers']['Authorization']
+            print(token)
             break
-    sleep(2)
-
+    sleep(5)
     driver.quit()
     return token
 
