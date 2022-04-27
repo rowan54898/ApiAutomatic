@@ -77,3 +77,7 @@ def RNum(length):
     randstart = 10 ** (length - 1)
     randend = (10 ** length) - 1
     return random.randint(randstart, randend)
+
+
+def test():
+    pass
