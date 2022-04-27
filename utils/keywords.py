@@ -71,3 +71,9 @@ def RString(flag, length):
             random_str += m_str[random.randint(0, len(m_str) - 1)]
         # print(random_str)
         return random_str
+
+
+def RNum(length):
+    randstart = 10 ** (length - 1)
+    randend = (10 ** length) - 1
+    return random.randint(randstart, randend)
