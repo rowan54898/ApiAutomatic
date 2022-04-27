@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="新建接口自动化项目">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biz/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/keyword_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/keyword_parsing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/keywords.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/keywords.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/request_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/testcase_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/testcase_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +205,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
