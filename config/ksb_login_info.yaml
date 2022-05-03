@@ -1,0 +1,11 @@
+login_page_url : http://139.9.123.121:83
+loginAccount_xpath : //*[@id="App"]/div[1]/div[2]/div[1]/div[2]/div/input
+loginPassword_xpath : //*[@id="App"]/div[1]/div[2]/div[1]/div[3]/div/input
+loginAccount : 15651000256
+loginPassword : ksb@2021
+element : //*[@id="slider"]/div/div[2]
+url : http://139.9.123.121:83/ksb/rest/equipmentMap/getRole
+loginButton : //*[@id="App"]/div[1]/div[2]/div[3]/button
+
+jituan_login_page_url : http://168.168.10.78:84/
+shanmei_login_page_url : http://168.168.10.106:81/

@@ -2,6 +2,7 @@
 import json
 from time import sleep
 
+import yaml
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
@@ -30,7 +31,13 @@ def get_track(distance):
     return track
 
 
-def get_token():
+def read_yaml(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        cfg = yaml.load(f.read(), Loader=yaml.FullLoader)
+        return cfg
+
+
+def get_token(path):
     """
     通过ui自动化获取页面接口全量信息，并且拿到接口的token
     :return:token 接口请求头中Authorization的值
@@ -58,10 +65,12 @@ def get_token():
     option.add_argument('window-size=1920x1080')  # 指定浏览器分辨率
     option.add_experimental_option('w3c', False)
     driver = webdriver.Chrome(desired_capabilities=caps, options=option)
-    driver.get('http://139.9.123.121:83/userlogin.html')
-    driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[1]/div[2]/div/input').send_keys('15651000256')
-    driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[1]/div[3]/div/input').send_keys('ksb@2021')
-    element = driver.find_element('xpath', '//*[@id="slider"]/div/div[2]')
+    driver.get(read_yaml(path=path)['login_page_url'])
+    driver.find_element_by_xpath(read_yaml(path=path)['loginAccount_xpath']).send_keys(
+        read_yaml(path=path)['loginAccount'])
+    driver.find_element_by_xpath(read_yaml(path=path)['loginPassword_xpath']).send_keys(
+        read_yaml(path=path)['loginPassword'])
+    element = driver.find_element('xpath', read_yaml(path=path)['element'])
     ActionChains(driver).click_and_hold(on_element=element).perform()
     sleep(0.5)
     ActionChains(driver).move_to_element_with_offset(element, 200, 0).perform()
@@ -71,7 +80,7 @@ def get_token():
     sleep(0.2)
     ActionChains(driver).release().perform()
     sleep(0.5)
-    driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[3]/button').click()
+    driver.find_element_by_xpath(read_yaml(path=path)['loginButton']).click()
     sleep(4)
     request_log = driver.get_log('performance')
     # print(request_log)
@@ -85,12 +94,13 @@ def get_token():
             continue
 
         url = request.get('url')
-        if url == "http://139.9.123.121:83/ksb/rest/equipmentMap/getRole":
+        if url == read_yaml(path=path)['url']:
             # 得到requestId
             token += message['request']['headers']['Authorization']
-            # print(token)
+            print(token)
             break
-    sleep(5)
+    sleep(1)
     driver.quit()
     return token
+
 

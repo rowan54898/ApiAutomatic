@@ -11,7 +11,8 @@ from biz import login
 from utils import request_process, data_process, testcase_handler
 from utils.keyword_parsing import *
 
-auth_token = login.get_token()
+path = './config/ksb_login_info.yaml'
+auth_token = login.get_token(path=path)
 print(auth_token)
 
 
@@ -21,7 +22,8 @@ def excute_testcase():
         case_no = str(mylist[0])
         print(case_no)
         line_no = testcase_handler.get_testcase_line_no(case_no=case_no)
-        url = mylist[8] + keyword_parsing_api(case_no=case_no)
+        # url = mylist[8] + keyword_parsing_api(case_no=case_no)
+        url = login.read_yaml(path=path)['login_page_url'] + keyword_parsing_api(case_no=case_no)
         print(url)
         testcase_handler.write_result(line_no=line_no, column=17, excute_result=url)
         method = mylist[10]

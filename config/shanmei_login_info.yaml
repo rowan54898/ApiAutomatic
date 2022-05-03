@@ -1,0 +1,8 @@
+login_page_url : http://168.168.10.106:81
+loginAccount_xpath : //*[@id="App"]/div[1]/div[2]/div[1]/div[2]/div/input
+loginPassword_xpath : //*[@id="App"]/div[1]/div[2]/div[1]/div[3]/div/input
+loginAccount : ADMIN
+loginPassword : abcd@1234
+element : //*[@id="slider"]/div/div[2]
+url : http://168.168.10.106:81/rest/system/menu/listIndexForMk
+loginButton : //*[@id="App"]/div[1]/div[2]/button
