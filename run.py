@@ -27,7 +27,7 @@ def excute_testcase():
         method = mylist[10]
         header = {"Content-Type": "application/json", "Authorization": auth_token}
         # request = eval(str(mylist[12]))
-        request = keyword_parsing_response(case_no=case_no)
+        request = keyword_parsing_request(case_no=case_no)
         testcase_handler.write_result(line_no=line_no, column=18, excute_result=str(request))
         print(request)
 
