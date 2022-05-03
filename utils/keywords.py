@@ -10,14 +10,14 @@ from utils import testcase_handler
 # @PayloadDepend('A-001','industryNam')
 
 
-def ResponseDependMulti(case_no, keyword, DTO):
+def ResponseDependMulti(case_no, keyword, dto):
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
     responsebody = eval(str(caseinfo[13]))
-    if '#' not in DTO:
-        for data in responsebody[DTO]:
+    if '#' not in dto:
+        for data in responsebody[dto]:
             return data[str(keyword)]
-    elif '#' in DTO:
-        jsonpath = re.split('#', DTO)
+    elif '#' in dto:
+        jsonpath = re.split('#', dto)
         print(jsonpath)
         for i in range(len(jsonpath)):
             print(responsebody)
