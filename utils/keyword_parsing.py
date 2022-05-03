@@ -5,6 +5,10 @@ from utils import testcase_handler, keywords
 
 
 def keywords_list():
+    """
+    关键字列表
+    通过一行行读取py文件的方式，获取所有关键字
+    """
     path = './utils/keywords.py'
     func_list = []
     func_list_noparam = []
@@ -25,8 +29,9 @@ def keywords_list():
 
 
 def dict_flatlist(d):
+    """递归方法，将所有k对应的v替换成关键字解析后的真实值"""
     # print(d)
-    if (d is not None):  # and (':' in d)
+    if d is not None:  # and (':' in d)
         for k, v in d.items():
             if type(v) == dict:
                 dict_flatlist(v)
@@ -36,63 +41,82 @@ def dict_flatlist(d):
                         dict_flatlist(v[i])
                     else:
                         pass
-            elif type(v) == int or v == None:
+            elif type(v) == int or v is None:
                 d[k] = d[k]
             else:
-                if re.search('@(.+?)\(', str(v)) == None:
+                if re.search('@(.+?)\(', str(v)) is None:
                     d[k] = d[k]
-                elif re.search('@(.+?)\(', str(v)).group(1) in keywords_list():
-                    # re.search('((.+?)\)', str(v)).group(1)
-                    case_no_find = re.split('\'', v)[1]
-                    print(case_no_find)
-                    keyword = re.split('\'', v)[3]
-                    if str(re.search('@(.+?)\(', str(v)).group(1)) == 'ResponseDependMulti':
-                        DTO = re.split('\'', v)[5]
-                        print(DTO)
-                        d[k] = keywords.ResponseDependMulti(case_no=case_no_find, keyword=keyword, DTO=DTO)
-                        print(d[k])
-                    elif str(re.search('@(.+?)\(', str(v)).group(1)) == 'PayloadDepend':
-                        d[k] = keywords.PayloadDepend(case_no=case_no_find, keyword=keyword)
-                    elif str(re.search('@(.+?)\(', str(v)).group(1)) == 'RString':
-                        d[k] = keywords.RString(flag=case_no_find, length=keyword)
-
                 else:
-                    pass
+                    d[k] = keyword_handler(value=v)
         else:
             pass
 
 
-def keyword_parsing_response(case_no):
+def keyword_parsing_request(case_no):
+    """
+    解析关键字--请求入参
+    """
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
     request = eval(str(caseinfo[12]))
     print(request)
     dict_flatlist(d=request)
+    # print(request)
     return request
 
 
-# case_no = 'A-001'
-# keyword_parsing_response(case_no=case_no)
-
-
 def keyword_parsing_api(case_no):
+    """
+    解析关键字--请求接口
+    """
+
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
-    url = caseinfo[9]
+    url = caseinfo[9]  # 获取api
     print(url)
     url_keywords = re.split('\"', url)
     url_new = ''
     for i in range(len(url_keywords)):
+        """将api重新拼装"""
         if '@' in url_keywords[i]:
-            url_keywords_i = re.search('@(.+?)\(', url_keywords[i]).group(1)
-            case_no_find = re.split('\'', url_keywords[i])[1]
-            keyword = re.split('\'', url_keywords[i])[3]
-            if url_keywords_i == 'PayloadDepend':
-                url_keywords[i] = keywords.PayloadDepend(case_no=case_no_find, keyword=keyword)
-                url_new += url_keywords[i]
-            elif url_keywords_i == 'ResponseDependMulti':
-                DTO = re.split('\'', url_keywords[i])[5]
-                url_keywords[i] = keywords.ResponseDependMulti(case_no=case_no_find, keyword=keyword, DTO=DTO)
-                url_new += url_keywords[i]
+            url_new += keyword_handler(value=url_keywords[i])
         else:
             url_new += url_keywords[i]
     # print(url_new)
     return url_new
+
+
+def keyword_handler(value):
+    """
+    关键字处理方法，将关键字换成对应值并返回
+    ps：支持一个value中有多个关键字，并且拼接上
+    """
+
+    new_value = ''
+    if '@' in value:
+        keyword_handler_list = re.split('@', value)
+        # print(keyword_handler_list)
+        for v in keyword_handler_list:
+            if re.search('(.+?)\(', str(v)) is None:
+                new_value += v
+            elif re.search('(.+?)\(', str(v)).group(1) in keywords_list():
+                # re.search('((.+?)\)', str(v)).group(1)
+                case_no_find = re.split('\'', v)[1]
+                # print(case_no_find)
+                keyword = re.split('\'', v)[3]
+                if str(re.search('(.+?)\(', str(v)).group(1)) == 'ResponseDependMulti':
+                    dto = re.split('\'', v)[5]
+                    # print(DTO)
+                    new_value += keywords.ResponseDependMulti(case_no=case_no_find, keyword=keyword, dto=dto)
+                    # print(d[k])
+                elif str(re.search('(.+?)\(', str(v)).group(1)) == 'PayloadDepend':
+                    new_value += keywords.PayloadDepend(case_no=case_no_find, keyword=keyword)
+                elif str(re.search('(.+?)\(', str(v)).group(1)) == 'RString':
+                    new_value += keywords.RString(flag=case_no_find, length=keyword)
+
+            else:
+                pass
+
+    return new_value
+
+# case_no = 'A-004'
+# keyword_parsing_api(case_no=case_no)
+# keyword_parsing_response(case_no=case_no)
