@@ -51,7 +51,14 @@ def get_token():
         },
     }
 
-    driver = webdriver.Chrome(desired_capabilities=caps)
+    option = webdriver.ChromeOptions()
+    option.add_argument('--no-sandbox')  # 取消沙盒模式
+    option.add_argument('--disable-dev-shm-usage')
+    option.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
+    option.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
+    option.add_argument('window-size=1920x1080')  # 指定浏览器分辨率
+    option.add_experimental_option('w3c', False)
+    driver = webdriver.Chrome(desired_capabilities=caps, options=option)
     driver.get('http://168.168.10.106:81/userlogin.html')
     driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[1]/div[2]/div/input').send_keys('ADMIN')
     driver.find_element_by_xpath('//*[@id="App"]/div[1]/div[2]/div[1]/div[3]/div/input').send_keys('abcd@1234')
@@ -82,7 +89,7 @@ def get_token():
         if (url == "http://168.168.10.106:81/rest/system/menu/listIndexForMk"):
             # 得到requestId
             token += message['request']['headers']['Authorization']
-            print(token)
+            # print(token)
             break
     sleep(3)
     driver.quit()
