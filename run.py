@@ -1,22 +1,26 @@
 # -*- coding:utf-8 -*-
+import argparse
 import json
-import unittest
-from time import sleep
 
-import jsonpath
-import openpyxl
-import requests
-import yaml
 from biz import login
-from utils import request_process, data_process, testcase_handler
+from utils import request_process, data_process
 from utils.keyword_parsing import *
 
-path = './config/ksb_login_info.yaml'
-auth_token = login.get_token(path=path)
-print(auth_token)
+"""
+引入注册参数，在命令行传参,便于以后可以和headless无界面Chrome浏览器启动一起，集成Git、Jenkins，在linux上执行。
+命令：(python3 run.py -p xxxx -c xxxx)
+如：python3 run.py -p ./config/ksb_login_info.yaml -c ./testcase/接口自动化测试用例模板.xlsx
+"""
+parser = argparse.ArgumentParser(description='启动测试用例的ip地址')
+parser.add_argument('-p', '--path', default='./config/ksb_login_info.yaml', help='path')
+parser.add_argument('-c', '--case', default='./testcase/接口自动化测试用例模板.xlsx', help='caseName')
+args = parser.parse_args()
 
 
-def excute_testcase():
+def excute_testcase(path):
+    # path = './config/ksb_login_info.yaml'
+    auth_token = login.get_token(path=path)
+    print(auth_token)
     for mylist in testcase_handler.get_testcase():
         """获取基本信息"""
         case_no = str(mylist[0])
@@ -49,4 +53,5 @@ def excute_testcase():
 
 
 if __name__ == '__main__':
-    excute_testcase()
+    """引入命令行传参path，如果命令行没有指定值，则按照默认值，详情按照 python3 run.py -h 查看"""
+    excute_testcase(args.path)
