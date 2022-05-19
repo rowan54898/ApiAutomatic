@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>关键字库</title>
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../static/myadmin/dist/css/adminlte.min.css">
+</head>
+<body class="sidebar-collapse">
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>关键字库</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!--编写关键字库：ResponseDependMulti-->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="callout callout-info">
+                            <h4> 1.ResponseDependMulti</h4>
+                            获取接口返回值字典格式key对应的value
+                        </div>
+                        <!-- Main content -->
+                        <div class="invoice p-3 mb-3">
+                            <!-- title row -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5>
+                                        ResponseDependMulti('caseNum','keyName','condition')
+                                    </h5>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- Table row -->
+                            <div class="row">
+                                <div class="col-12 table-responsive">
+                                    <!--                                    表格，字段说明-->
+                                    <table class="table table-striped">
+                                        <tbody>
+                                        <thead>
+                                        <tr>
+                                            <th>参数</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>caseNum</td>
+                                            <td>用例编号</td>
+                                        </tr>
+                                        <tr>
+                                            <td>keyName</td>
+                                            <td>依赖键名</td>
+                                        </tr>
+                                        <tr>
+                                            <td>condition</td>
+                                            <td>
+                                                1、只写fatherKey：表示获取父节点下的keyName节点<br>
+                                                2、写fatherKey#childrenlist#childrenlist：用#隔开，表示jsonpath，按层寻找节点
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4>示例</h4><br>
+                                        </div>
+                                        <!--                                        示例1-->
+                                        <div class="col-12">
+                                            <h5>例1:获取入参报文中"data"对应的值</h5>
+                                            ResponseDependMulti('A-002','industryNo','data')<br>
+                                            <div class="row sm-3">
+                                                <div class="col-sm-4">
+                                                    <img class="img-fluid mb-1"
+                                                         src="../static/myadmin/keywords_images/ResponseDependMulti1.jpg">
+                                                    <span>入参使用关键字</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img class="img-fluid mb-1"
+                                                         src="../static/myadmin/keywords_images/ResponseDependMulti2.jpg">
+                                                    <span>按照condition寻找keyName</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img class="img-fluid"
+                                                         src="../static/myadmin/keywords_images/ResponseDependMulti3.jpg">
+                                                    <span>解析结果</span>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!--                                        示例2-->
+                                        <div class="col-12"><br>
+                                            <h5>例2:获取入参报文中"data"对应的值</h5>
+                                            ResponseDependMulti('A-013','id','data#children#children')<br>
+                                            <div class="row sm-3">
+                                                <div class="col-sm-4">
+                                                    <img class="img-fluid mb-1"
+                                                         src="../static/myadmin/keywords_images/ResponseDependMulti4.png">
+                                                    <span>入参使用关键字</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img class="img-fluid mb-1"
+                                                         src="../static/myadmin/keywords_images/ResponseDependMulti5.png">
+                                                    <span>按照condition寻找keyName</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img class="img-fluid"
+                                                         src="../static/myadmin/keywords_images/ResponseDependMulti6.png">
+                                                    <span>解析结果</span>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.invoice -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!--编写关键字库：PayloadDepend-->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="callout callout-info">
+                            <h4> 2.PayloadDepend</h4>
+                            获取接口入参字典格式key对应的value
+                        </div>
+                        <!-- Main content -->
+                        <div class="invoice p-3 mb-3">
+                            <!-- title row -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5>
+                                        PayloadDepend('caseNum','keyName')
+                                    </h5>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- Table row -->
+                            <div class="row">
+                                <div class="col-12 table-responsive">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                        <thead>
+                                        <tr>
+                                            <th>参数</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>caseNum</td>
+                                            <td>用例编号</td>
+                                        </tr>
+                                        <tr>
+                                            <td>keyName</td>
+                                            <td>依赖键名</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <!--                                        示例-->
+                                        <div class="col-12">
+                                            <h4>示例</h4><br>
+                                        </div>
+                                        <!--                                        示例1-->
+                                        <div class="col-12">
+                                            <h5>例1:获取入参报文中"data"对应的值</h5>
+                                            PayloadDepend('A-001','industryNam')<br>
+                                            <div class="row sm-3">
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/PayloadDepend1.png"
+                                                            width="450" height="220">
+                                                    <span>入参使用关键字</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/PayloadDepend2.png"
+                                                            width="450" height="220">
+                                                    <span>按照condition寻找keyName</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/PayloadDepend3.png"
+                                                            width="450" height="220">
+                                                    <span>解析结果</span>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- /.invoice -->
+                                </div><!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.invoice -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!--编写关键字库：RString-->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="callout callout-info">
+                            <h4> 3.RString</h4>
+                            获取指定长度的字母
+                        </div>
+                        <!-- Main content -->
+                        <div class="invoice p-3 mb-3">
+                            <!-- title row -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5>
+                                        RString('flag','length')
+                                    </h5>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- Table row -->
+                            <div class="row">
+                                <div class="col-12 table-responsive">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                        <thead>
+                                        <tr>
+                                            <th>参数</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>flag</td>
+                                            <td>u: 代表生成纯大写字母字符串<br>
+                                                l: 生成纯小写字母字符串<br>
+                                                m: 生成大小写混合的字符串
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>length</td>
+                                            <td>长度</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <!--                                        示例-->
+                                        <div class="col-12">
+                                            <h4>示例</h4><br>
+                                        </div>
+                                        <!--                                        示例1-->
+                                        <div class="col-12">
+                                            <h5>例1:获取10位长度字母字符串</h5>
+                                            <div class="row sm-3">
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/RString1.png"
+                                                            width="450" height="220">
+                                                    <span>RString('u',10)</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/RString2.png"
+                                                            width="450" height="220">
+                                                    <span>RString('l',10)</span>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/RString3.png"
+                                                            width="450" height="220">
+                                                    <span>RString('m',10)</span>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- /.invoice -->
+                                </div><!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.invoice -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!--编写关键字库：RNum-->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="callout callout-info">
+                            <h4> 4.RNum</h4>
+                            获取指定长度的数字
+                        </div>
+                        <!-- Main content -->
+                        <div class="invoice p-3 mb-3">
+                            <!-- title row -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5>
+                                        RNum(length)
+                                    </h5>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- Table row -->
+                            <div class="row">
+                                <div class="col-12 table-responsive">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                        <thead>
+                                        <tr>
+                                            <th>参数</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>length</td>
+                                            <td>数字长度</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <!--                                        示例-->
+                                        <div class="col-12">
+                                            <h4>示例</h4><br>
+                                        </div>
+                                        <!--                                        示例1-->
+                                        <div class="col-12">
+                                            <h5>例1:获取11位长度数字</h5>
+                                            <div class="row sm-3">
+                                                <div class="col-sm-4">
+                                                    <img
+                                                            src="../static/myadmin/keywords_images/RNum.png"
+                                                            width="450" height="220">
+                                                    <span>RNum(11)</span>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- /.invoice -->
+                                </div><!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.invoice -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer no-print">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 1.0-Rowan
+        </div>
+        <strong>Copyright &copy; 2022-2022 <a href="">Sushine-Automatic-Test keywords</a>.</strong>
+        All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+</body>
+</html>
