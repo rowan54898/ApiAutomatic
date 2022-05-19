@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="上传指定长度随机数字" />
+    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="新增关键字截图">
+      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/RNum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/ResponseDependMulti1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/ResponseDependMulti2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/ResponseDependMulti3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biz/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,12 +19,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,18 +46,29 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/biz" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/myadmin/keywords_images" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/biz" />
+      <recent name="$PROJECT_DIR$/static/myadmin/keywords_images" />
+      <recent name="$PROJECT_DIR$/report" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/testcase" />
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/myadmin" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/report" />
+      <recent name="$PROJECT_DIR$/learn" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="data_process" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.JSON">
+    <configuration name="JSON" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -47,11 +76,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/data_process.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JSON.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -60,7 +89,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="keyword_parsing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="data_render" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,11 +97,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/keyword_parsing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/report/data_render.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,7 +110,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="keywords" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="data_render1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,32 +118,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/report" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/keywords.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/biz" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/biz/login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/report/data_render1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -145,20 +153,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in keywords.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/utils/keywords.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.login" />
       <item itemvalue="Python.run" />
-      <item itemvalue="Python.data_process" />
-      <item itemvalue="Python.keyword_parsing" />
-      <item itemvalue="Python.keywords" />
+      <item itemvalue="Python.data_render" />
+      <item itemvalue="Python.data_render1" />
+      <item itemvalue="Python.JSON" />
+      <item itemvalue="Python tests.Python tests in keywords.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.JSON" />
+        <item itemvalue="Python tests.Python tests in keywords.py" />
+        <item itemvalue="Python.data_render" />
         <item itemvalue="Python.run" />
-        <item itemvalue="Python.login" />
-        <item itemvalue="Python.keyword_parsing" />
-        <item itemvalue="Python.keywords" />
-        <item itemvalue="Python.data_process" />
+        <item itemvalue="Python.data_render1" />
       </list>
     </recent_temporary>
   </component>
@@ -178,15 +200,109 @@
       <option name="project" value="LOCAL" />
       <updated>1650594110667</updated>
     </task>
-    <task id="LOCAL-00002" summary="上传指定长度随机数字">
-      <created>1651023461491</created>
+    <task id="LOCAL-00002" summary="新增关键字处理方法keyword_handler，去除代码冗杂性，方便以后关键字引用">
+      <created>1651599099098</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1651023461491</updated>
+      <updated>1651599099098</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="将ResponseDependMulti方法中的参数DTO改成小写">
+      <created>1651599152453</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651599152453</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改方法名，原request = keyword_parsing_response(case_no=case_no)，现request = keyword_parsing_request(case_no=case_no)">
+      <created>1651599237685</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651599237685</updated>
+    </task>
+    <task id="LOCAL-00005" summary="将所有方法中的变量workbook = openpyxl.load_workbook(r'./testcase/接口自动化测试用例模板.xlsx')拿到最外层">
+      <created>1651599298205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651599298205</updated>
+    </task>
+    <task id="LOCAL-00006" summary="浏览器启动方式改为无界面启动，适用windows、mac、linux">
+      <created>1651602771167</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651602771167</updated>
+    </task>
+    <task id="LOCAL-00007" summary="将登录页面数据隔离到yaml文件中，在run.py文件里只需要修改path就可以按照环境执行测试用例">
+      <created>1651606559816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651606559816</updated>
+    </task>
+    <task id="LOCAL-00008" summary="增加启动命令行参数-c和-p 执行测试用例，便于linux上跑测试用例">
+      <created>1651676875052</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651676875052</updated>
+    </task>
+    <task id="LOCAL-00009" summary="增加启动命令行参数-c和-p 执行测试用例，便于linux上跑测试用例">
+      <created>1651676981520</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651676981520</updated>
+    </task>
+    <task id="LOCAL-00010" summary="增加启动命令行参数-c和-p 执行测试用例，便于linux上跑测试用例">
+      <created>1651677005200</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651677005200</updated>
+    </task>
+    <task id="LOCAL-00011" summary="增加启动命令行参数-c和-p 执行测试用例，便于linux上跑测试用例">
+      <created>1651677025446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651677025446</updated>
+    </task>
+    <task id="LOCAL-00012" summary="将命令行参数独立成公共组件，方便维护">
+      <created>1652979323108</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652979323108</updated>
+    </task>
+    <task id="LOCAL-00013" summary="新增测试报告模板+数据渲染">
+      <created>1652979961202</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652979961202</updated>
+    </task>
+    <task id="LOCAL-00014" summary="新增关键字截图">
+      <created>1652980053585</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652980053585</updated>
+    </task>
+    <task id="LOCAL-00015" summary="新增关键字截图">
+      <created>1652980077474</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652980077474</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ID_ORDER">
@@ -204,17 +320,39 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="新建接口自动化项目" />
-    <MESSAGE value="上传指定长度随机数字" />
-    <option name="LAST_COMMIT_MESSAGE" value="上传指定长度随机数字" />
+    <MESSAGE value="新增关键字处理方法keyword_handler，去除代码冗杂性，方便以后关键字引用" />
+    <MESSAGE value="将ResponseDependMulti方法中的参数DTO改成小写" />
+    <MESSAGE value="修改方法名，原request = keyword_parsing_response(case_no=case_no)，现request = keyword_parsing_request(case_no=case_no)" />
+    <MESSAGE value="将所有方法中的变量workbook = openpyxl.load_workbook(r'./testcase/接口自动化测试用例模板.xlsx')拿到最外层" />
+    <MESSAGE value="浏览器启动方式改为无界面启动，适用windows、mac、linux" />
+    <MESSAGE value="将登录页面数据隔离到yaml文件中，在run.py文件里只需要修改path就可以按照环境执行测试用例" />
+    <MESSAGE value="增加启动命令行参数-c和-p 执行测试用例，便于linux上跑测试用例" />
+    <MESSAGE value="将命令行参数独立成公共组件，方便维护" />
+    <MESSAGE value="新增测试报告模板+数据渲染" />
+    <MESSAGE value="新增关键字截图" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增关键字截图" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
