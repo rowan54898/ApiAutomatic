@@ -1,20 +1,11 @@
 # -*- coding:utf-8 -*-
-import argparse
 import json
 
 from biz import login
+from report import data_render
 from utils import request_process, data_process
+from utils.conftest import args
 from utils.keyword_parsing import *
-
-"""
-引入注册参数，在命令行传参,便于以后可以和headless无界面Chrome浏览器启动一起，集成Git、Jenkins，在linux上执行。
-命令：(python3 run.py -p xxxx -c xxxx)
-如：python3 run.py -p ./config/ksb_login_info.yaml -c ./testcase/接口自动化测试用例模板.xlsx
-"""
-parser = argparse.ArgumentParser(description='启动测试用例的ip地址')
-parser.add_argument('-p', '--path', default='./config/ksb_login_info.yaml', help='path')
-parser.add_argument('-c', '--case', default='./testcase/接口自动化测试用例模板.xlsx', help='caseName')
-args = parser.parse_args()
 
 
 def excute_testcase(path):
@@ -26,30 +17,40 @@ def excute_testcase(path):
         case_no = str(mylist[0])
         print(case_no)
         line_no = testcase_handler.get_testcase_line_no(case_no=case_no)
-        # url = mylist[8] + keyword_parsing_api(case_no=case_no)
-        url = login.read_yaml(path=path)['login_page_url'] + keyword_parsing_api(case_no=case_no)
+
+        # 获取解析后的api，并写入Excel
+        api = keyword_parsing_api(case_no=case_no)
+        testcase_handler.write_result(line_no=line_no, column=17, excute_result=api)
+
+        url = login.read_yaml(path=path)['login_page_url'] + api
         print(url)
-        testcase_handler.write_result(line_no=line_no, column=17, excute_result=url)
         method = mylist[10]
         header = {"Content-Type": "application/json", "Authorization": auth_token}
-        # request = eval(str(mylist[12]))
+
+        # 获取解析后的request参数，并写入Excel
         request = keyword_parsing_request(case_no=case_no)
         testcase_handler.write_result(line_no=line_no, column=18, excute_result=str(request))
         print(request)
 
-        """获取基本信息后，执行接口，获取返回值"""
+        """获取基本信息后，执行接口，获取返回值，并写入Excel"""
         res = request_process.request_process(url=url, request_method=method, request_header=header,
                                               request_content=request)
         resjson = json.loads(res.content)
         print(resjson)
-
-        """写入执行结果"""
         testcase_handler.write_result(line_no=line_no, column=14, excute_result=str(resjson))
+
+        """获取接口执行耗时,并写入Excel"""
+        request_time = res.elapsed.total_seconds()
+        print(request_time)
+        testcase_handler.write_result(line_no=line_no, column=19, excute_result=str(request_time))
+
+        """获取断言结果，并写入Excel"""
         asser_result = data_process.assert_result(line_no=line_no)
         print(asser_result)
-
-        """写入断言结果"""
         testcase_handler.write_result(line_no=line_no, column=16, excute_result=asser_result)
+
+    """生成测试报告"""
+    data_render.data_render_html()
 
 
 if __name__ == '__main__':

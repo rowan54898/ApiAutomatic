@@ -2,7 +2,7 @@
 
 import openpyxl
 
-from run import args
+from utils.conftest import args
 
 """引入命令行注册参数，像ls -help   python -v一样，把case绝对路径写入命令行，执行指定Excel"""
 workbook = openpyxl.load_workbook(args.case)
