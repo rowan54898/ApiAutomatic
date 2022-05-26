@@ -23,6 +23,10 @@ def request_process(url, request_method, request_header, request_content):
         try:
             if isinstance(request_content, dict):
                 r = requests.post(url, data=json.dumps(request_content), headers=request_header)
+            elif isinstance(request_content, str):
+                r = requests.post(url, data=request_content, headers=request_header)
+            elif isinstance(request_content, list):
+                r = requests.post(url, data=json.dumps(request_content), headers=request_header)
             else:
                 raise ValueError
         except ValueError as e:

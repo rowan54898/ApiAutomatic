@@ -12,7 +12,7 @@ from utils import testcase_handler
 
 def ResponseDependMulti(case_no, keyword, dto):
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
-    responsebody = eval(str(caseinfo[13]))
+    responsebody = eval(str(caseinfo[14]))
     if '#' not in dto:
         for data in responsebody[dto]:
             return data[str(keyword)]
@@ -80,4 +80,8 @@ def RNum(length):
 
 
 def test():
+    pass
+
+
+def test2():
     pass

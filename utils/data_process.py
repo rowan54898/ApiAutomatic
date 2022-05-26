@@ -9,9 +9,12 @@ splitList = ['==', '!=', '>', '>=', '<', '<=', '!!']
 
 def assert_handler(line_no):
     mylist = testcase_handler.get_line_no_testcase(line_no=line_no)
-    print(mylist)
-    checkpoint = mylist[14].split('\n')
-    responsebody = eval(str(mylist[13]))
+    # print(mylist)
+    checkpoint = mylist[13].split('\n')
+    if 'null' in mylist[14]:
+        responsebody = json.loads(mylist[14])
+    else:
+        responsebody = eval(str(mylist[14]))
     # print(responsebody)
     newlist = []
     for check in checkpoint:

@@ -1,4 +1,5 @@
 #  -*-  coding:utf-8 -*-
+import json
 import re
 
 from utils import testcase_handler, keywords
@@ -57,11 +58,42 @@ def keyword_parsing_request(case_no):
     解析关键字--请求入参
     """
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
-    request = eval(str(caseinfo[12]))
-    print(request)
-    dict_flatlist(d=request)
+    request = str(caseinfo[12])
     # print(request)
-    return request
+    a = request
+    if (type(a) is str) and a.startswith('{'):
+        if 'true' in request:
+            request_new = json.loads(request)
+            # print(request_new)
+        else:
+            request_new = eval(request)
+        dict_flatlist(d=request_new)
+    elif (type(a) is str) and a.startswith('['):
+        request_new = eval(request)
+        # print(request_new)
+        request_list = []
+        for i in range(len(request_new)):
+            request_i = eval(str(request_new[i]))
+            # print(type(request_i))
+            dict_flatlist(d=request_i)
+            # request_i = json.dumps(request_i)
+            request_list.append(request_i)
+            # print(request_new)
+        request_new = request_list
+
+    elif type(a) is str and (len(a) > 0):
+        request_keywords = re.split('\"', request)
+        request_new = ''
+        for i in range(len(request_keywords)):
+            """将入参重新拼装"""
+            if '@' in request_keywords[i]:
+                request_new += keyword_handler(value=request_keywords[i])
+            else:
+                request_new += request_keywords[i]
+    else:
+        request_new = None
+    print(request_new)
+    return request_new
 
 
 def keyword_parsing_api(case_no):
@@ -114,7 +146,8 @@ def keyword_handler(value):
 
             else:
                 pass
-
+    else:
+        new_value += value
     return new_value
 
 # case_no = 'A-004'

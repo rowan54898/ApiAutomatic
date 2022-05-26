@@ -9,7 +9,7 @@ from utils.keyword_parsing import *
 
 
 def excute_testcase(path):
-    # path = './config/ksb_login_info.yaml'
+    # path = './config/jituan_login_info.yaml'
     auth_token = login.get_token(path=path)
     print(auth_token)
     for mylist in testcase_handler.get_testcase():
@@ -25,7 +25,12 @@ def excute_testcase(path):
         url = login.read_yaml(path=path)['login_page_url'] + api
         print(url)
         method = mylist[10]
-        header = {"Content-Type": "application/json", "Authorization": auth_token}
+        content_type = mylist[11]
+
+        if len(content_type) > 0:
+            header = {"Content-Type": content_type, "Authorization": auth_token}
+        else:
+            header = {"Content-Type": "application/json", "Authorization": auth_token}
 
         # 获取解析后的request参数，并写入Excel
         request = keyword_parsing_request(case_no=case_no)
@@ -35,9 +40,18 @@ def excute_testcase(path):
         """获取基本信息后，执行接口，获取返回值，并写入Excel"""
         res = request_process.request_process(url=url, request_method=method, request_header=header,
                                               request_content=request)
-        resjson = json.loads(res.content)
+
+        """判断是不同格式的请求头返回不一样的数据"""
+        if 'x' not in header:
+            if isinstance(request, list):
+                resjson = res.text
+            else:
+                resjson = json.loads(res.content)
+        else:
+            resjson = res.text
         print(resjson)
-        testcase_handler.write_result(line_no=line_no, column=14, excute_result=str(resjson))
+
+        testcase_handler.write_result(line_no=line_no, column=15, excute_result=str(resjson))
 
         """获取接口执行耗时,并写入Excel"""
         request_time = res.elapsed.total_seconds()
@@ -54,5 +68,5 @@ def excute_testcase(path):
 
 
 if __name__ == '__main__':
-    """引入命令行传参path，如果命令行没有指定值，则按照默认值，详情按照 python3 run.py -h 查看"""
+    """引入命令行传参path，如果命令行没有指定值，则按照默认值，详情按照 python run.py -h 查看"""
     excute_testcase(args.path)

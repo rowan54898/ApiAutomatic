@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="iml，xml更新">
+    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="测试报告模板js和css引用修改">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biz/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/data_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/report/data_render.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/ksb_login_info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ksb_login_info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/keyword_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/keyword_parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/keywords.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/keywords.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/request_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request_process.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,31 +47,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/myadmin/dist/js" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "/Users/rowanliu/PycharmProjects/ApiAutomatic",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/static/myadmin/dist/css" />
       <recent name="$PROJECT_DIR$/static/myadmin/dist/js" />
       <recent name="$PROJECT_DIR$/static/myadmin/keywords_images" />
       <recent name="$PROJECT_DIR$/report" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/testcase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/myadmin/dist/js" />
       <recent name="$PROJECT_DIR$/static/myadmin" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/report" />
       <recent name="$PROJECT_DIR$/learn" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.data_render">
-    <configuration name="JSON" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="apiHeader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -83,7 +82,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JSON.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apiHeader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data_render1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="keyword_parsing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,11 +120,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/report" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/report/data_render1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/keyword_parsing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="request_process" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/request_process.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,34 +176,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in keywords.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/utils/keywords.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.JSON" />
-      <item itemvalue="Python.data_render1" />
+      <item itemvalue="Python.apiHeader" />
+      <item itemvalue="Python.keyword_parsing" />
+      <item itemvalue="Python.request_process" />
       <item itemvalue="Python.data_render" />
       <item itemvalue="Python.run" />
-      <item itemvalue="Python tests.Python tests in keywords.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.data_render" />
-        <item itemvalue="Python.JSON" />
-        <item itemvalue="Python tests.Python tests in keywords.py" />
         <item itemvalue="Python.run" />
-        <item itemvalue="Python.data_render1" />
+        <item itemvalue="Python.request_process" />
+        <item itemvalue="Python.keyword_parsing" />
+        <item itemvalue="Python.apiHeader" />
+        <item itemvalue="Python.data_render" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652980256847</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="更新前端css，js文件">
+      <created>1653532121731</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1653532121731</updated>
+    </task>
+    <task id="LOCAL-00020" summary="测试报告模板js和css引用修改">
+      <created>1653532353147</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1653532353147</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -361,7 +381,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -379,10 +398,19 @@
     <MESSAGE value="新增关键字库页面" />
     <MESSAGE value="新增前端js+css" />
     <MESSAGE value="iml，xml更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="iml，xml更新" />
+    <MESSAGE value="更新前端css，js文件" />
+    <MESSAGE value="测试报告模板js和css引用修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试报告模板js和css引用修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/keyword_parsing.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
