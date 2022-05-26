@@ -97,7 +97,7 @@ def get_token(path):
         if url == read_yaml(path=path)['url']:
             # 得到requestId
             token += message['request']['headers']['Authorization']
-            print(token)
+            # print(token)
             break
     sleep(1)
     driver.quit()

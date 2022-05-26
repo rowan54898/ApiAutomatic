@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="新增关键字截图">
-      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/RNum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/ResponseDependMulti1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/ResponseDependMulti2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/myadmin/keywords_images/ResponseDependMulti3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="iml，xml更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biz/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/data_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/report/data_render.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.min.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,16 +52,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/myadmin/keywords_images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/myadmin/dist/js" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/myadmin/dist/js" />
       <recent name="$PROJECT_DIR$/static/myadmin/keywords_images" />
       <recent name="$PROJECT_DIR$/report" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/testcase" />
-      <recent name="$PROJECT_DIR$/config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/myadmin" />
@@ -67,7 +70,7 @@
       <recent name="$PROJECT_DIR$/learn" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.JSON">
+  <component name="RunManager" selected="Python.data_render">
     <configuration name="JSON" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,17 +171,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.run" />
-      <item itemvalue="Python.data_render" />
-      <item itemvalue="Python.data_render1" />
       <item itemvalue="Python.JSON" />
+      <item itemvalue="Python.data_render1" />
+      <item itemvalue="Python.data_render" />
+      <item itemvalue="Python.run" />
       <item itemvalue="Python tests.Python tests in keywords.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data_render" />
         <item itemvalue="Python.JSON" />
         <item itemvalue="Python tests.Python tests in keywords.py" />
-        <item itemvalue="Python.data_render" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.data_render1" />
       </list>
@@ -298,7 +301,28 @@
       <option name="project" value="LOCAL" />
       <updated>1652980077474</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="新增关键字库页面">
+      <created>1652980129643</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652980129643</updated>
+    </task>
+    <task id="LOCAL-00017" summary="新增前端js+css">
+      <created>1652980185822</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1652980185822</updated>
+    </task>
+    <task id="LOCAL-00018" summary="iml，xml更新">
+      <created>1652980256847</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1652980256847</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -352,7 +376,10 @@
     <MESSAGE value="将命令行参数独立成公共组件，方便维护" />
     <MESSAGE value="新增测试报告模板+数据渲染" />
     <MESSAGE value="新增关键字截图" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增关键字截图" />
+    <MESSAGE value="新增关键字库页面" />
+    <MESSAGE value="新增前端js+css" />
+    <MESSAGE value="iml，xml更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="iml，xml更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
