@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="iml，xml更新">
+    <list default="true" id="89362e45-5760-4b22-b047-462bd4191e9b" name="Changes" comment="更新前端css，js文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biz/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/data_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/report/data_render.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/css/adminlte.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myadmin/dist/js/adminlte.min.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/接口自动化测试用例模板.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,18 +45,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/myadmin/dist/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/myadmin/dist/css" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/myadmin/dist/css" />
       <recent name="$PROJECT_DIR$/static/myadmin/dist/js" />
       <recent name="$PROJECT_DIR$/static/myadmin/keywords_images" />
       <recent name="$PROJECT_DIR$/report" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/testcase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/myadmin/dist/js" />
       <recent name="$PROJECT_DIR$/static/myadmin" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/report" />
@@ -322,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652980256847</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="更新前端css，js文件">
+      <created>1653532121731</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1653532121731</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -379,7 +380,8 @@
     <MESSAGE value="新增关键字库页面" />
     <MESSAGE value="新增前端js+css" />
     <MESSAGE value="iml，xml更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="iml，xml更新" />
+    <MESSAGE value="更新前端css，js文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新前端css，js文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
