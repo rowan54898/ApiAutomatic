@@ -3,6 +3,7 @@ import json
 import re
 
 from utils import testcase_handler, keywords
+from utils.data_format import data_format
 
 
 def keywords_list():
@@ -38,7 +39,7 @@ def dict_flatlist(d):
                 dict_flatlist(v)
             elif type(v) == list:
                 for i in range(len(v)):
-                    if type(i) == dict:
+                    if type(v) == dict:
                         dict_flatlist(v[i])
                     else:
                         pass
@@ -48,7 +49,21 @@ def dict_flatlist(d):
                 if re.search('@(.+?)\(', str(v)) is None:
                     d[k] = d[k]
                 else:
-                    d[k] = keyword_handler(value=v)
+
+                    if v.startswith('{'):
+                        a = data_format(value=v)
+                        dict_flatlist(a)
+                        d[k] = str(a)
+                    elif v.startswith('['):
+                        a = data_format(value=v)
+                        for i in range(len(a)):
+                            dict_flatlist(a[i])
+                        # print(a)
+                        a = json.dumps(a)
+                        # print(a)
+                        d[k] = str(a)
+                    else:
+                        d[k] = keyword_handler(value=v)
         else:
             pass
 
@@ -59,21 +74,17 @@ def keyword_parsing_request(case_no):
     """
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
     request = str(caseinfo[12])
-    # print(request)
+    print(request)
     a = request
     if (type(a) is str) and a.startswith('{'):
-        if 'true' in request:
-            request_new = json.loads(request)
-            # print(request_new)
-        else:
-            request_new = eval(request)
+        request_new = data_format(request)
         dict_flatlist(d=request_new)
     elif (type(a) is str) and a.startswith('['):
-        request_new = eval(request)
+        request_new = data_format(request)
         # print(request_new)
         request_list = []
         for i in range(len(request_new)):
-            request_i = eval(str(request_new[i]))
+            request_i = request_new[i]
             # print(type(request_i))
             dict_flatlist(d=request_i)
             # request_i = json.dumps(request_i)
@@ -92,7 +103,7 @@ def keyword_parsing_request(case_no):
                 request_new += request_keywords[i]
     else:
         request_new = None
-    print(request_new)
+    # print(request_new)
     return request_new
 
 
@@ -150,6 +161,32 @@ def keyword_handler(value):
         new_value += value
     return new_value
 
-# case_no = 'A-004'
-# keyword_parsing_api(case_no=case_no)
-# keyword_parsing_response(case_no=case_no)
+
+def keyword_header(case_no, auth_token):
+    """
+    请求头content_type的格式处理
+    """
+    mylist = testcase_handler.get_case_info(case_no=case_no)
+    content_type = mylist[11]
+    if len(content_type) > 0:
+        header = {"Content-Type": content_type, "Authorization": auth_token}
+    else:
+        header = {"Content-Type": "application/json", "Authorization": auth_token}
+
+    return header
+
+
+def keyword_judge_header(header, request, res):
+    """判断是不同格式的请求头返回不一样的数据"""
+    if 'x' not in header:
+        if isinstance(request, list):
+            resjson = res.text
+        else:
+            resjson = json.loads(res.content)
+    else:
+        resjson = res.text
+    return resjson
+
+# case_no = 'A-049'
+# # keyword_parsing_api(case_no=case_no)
+# keyword_parsing_request(case_no=case_no)

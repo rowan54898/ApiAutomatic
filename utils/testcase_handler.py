@@ -40,7 +40,7 @@ def write_result(line_no, column, excute_result):
     # workbook = openpyxl.load_workbook(r'./testcase/接口自动化测试用例模板.xlsx')
     sheets = workbook['Sheet1']
     sheets.cell(line_no, column, excute_result)
-    workbook.save('./testcase/接口自动化测试用例模板.xlsx')
+    workbook.save(args.case)
 
 
 def get_line_no_testcase(line_no):

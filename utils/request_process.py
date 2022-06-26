@@ -34,5 +34,9 @@ def request_process(url, request_method, request_header, request_content):
         except Exception as e:
             r = None
         return r
-
-
+    elif request_method == 'delete':
+        try:
+            r = requests.delete(url, headers=request_header)
+        except Exception as e:
+            r = None
+        return r

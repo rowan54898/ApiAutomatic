@@ -1,5 +1,5 @@
 #  -*-  coding:utf-8 -*-
-
+import json
 import re
 import random
 
@@ -14,8 +14,13 @@ def ResponseDependMulti(case_no, keyword, dto):
     caseinfo = testcase_handler.get_case_info(case_no=case_no)  # 获取当前case_no完整信息
     responsebody = eval(str(caseinfo[14]))
     if '#' not in dto:
-        for data in responsebody[dto]:
-            return data[str(keyword)]
+        if type(responsebody[dto]) == list:
+            for data in responsebody[dto]:
+                return data[str(keyword)]
+        elif type(responsebody[dto]) == str and responsebody[dto].startswith('{'):
+            return json.loads(responsebody[dto])[keyword]
+        else:
+            return responsebody[dto][keyword]
     elif '#' in dto:
         jsonpath = re.split('#', dto)
         print(jsonpath)
